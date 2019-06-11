@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   
+</head>
+<body>
+    <form name="myform" action="add.php" method="POST" onsubmit="return CheckPost();">
+        用户名:<input type="text" size="10" name="user"/><br>
+        标题:<input type="text" size="10" name="title" /><br>
+        内容:<textarea name="content"></textarea><br>
+        <input type="submit" name="submit" value="发布留言"/>
+    </form>
+    <script>
+   function CheckPost() {
+       if (myform.user.value == "") {
+           alert("请填写用户");
+           myform.user.focus();
+           return false;
+       }
+       if (myform.title.value.length < 5) {
+           alert("标题不能少于5个字符");
+           myform.title.focus();
+           return false;
+       }
+       if (myform.content.value == "") {
+           alert("内容不能为空");
+           myform.content.focus();
+           return false;
+       }
+   }
+    </script>
+</body>
+</html>
